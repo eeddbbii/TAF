@@ -8,10 +8,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import pl.tomaszbuga.ui.framework.PageObject;
 
+import static pl.tomaszbuga.ui.utils.UserUtils.pass;
+import static pl.tomaszbuga.ui.utils.UserUtils.username;
+
 @Log4j2
 public class DashboardPage extends PageObject {
 
-    @FindBy(id = "someId")
+    @FindBy(id= "someId")
     private WebElement somethingOnPage;
 
     public DashboardPage(WebDriver driver) {
@@ -20,7 +23,6 @@ public class DashboardPage extends PageObject {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-
     @Step("Action to perform")
     public DashboardPage actionToPerform() {
         log.info("Action to perform");
